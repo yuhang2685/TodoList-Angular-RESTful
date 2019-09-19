@@ -1,0 +1,13 @@
+
+<app-add-todo (addTodo)="addTodo($event)"></app-add-todo>
+<!--Note the use of app-todo-item instead of ul--> 
+<!--[todo]="todo" brings in (inputs) data from other components to store in local variables (in ts file)--> 
+<!--So correspondingly we have to @input todo (for save?) in todo-item.component.ts -->
+<!-- () for method, and pass on $event -->
+<app-todo-item 
+    *ngFor="let todo of todos" 
+    [todo]="todo"
+    
+    (deleteTodo)="deleteTodo($event)"
+>   
+</app-todo-item>
